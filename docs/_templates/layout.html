@@ -1,5 +1,14 @@
 
 {% extends "!layout.html" %}
+
+{% block header %}
+<div class="unauthorized-mirror-banner" style="background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; padding: 15px; text-align: center; font-size: 15px; font-family: sans-serif; position: relative; z-index: 9999; margin-bottom: 0;">
+  <strong>Notice:</strong> This is an unofficial mirror of the documentation. The official documentation is available at
+  <a href="https://googleapis.dev/python/pandas-gbq/latest/index.html" style="color: #0056b3; text-decoration: underline; font-weight: bold;">https://googleapis.dev/python/pandas-gbq/latest/index.html</a>
+</div>
+{{ super() }}
+{% endblock %}
+
 {%- block content %}
 {%- if theme_fixed_sidebar|lower == 'true' %}
   <div class="document">
@@ -20,11 +29,6 @@
           {% endblock %}
 
           <div class="body" role="main">
-          	<div class="admonition" id="python2-eol"> 
-          	 As of January 1, 2020 this library no longer supports Python 2 on the latest released version. 
-          	 Library versions released prior to that date will continue to be available. For more information please
-          	 visit <a href="https://cloud.google.com/python/docs/python2-sunset/">Python 2 support on Google Cloud</a>.
-          	</div>
             {% block body %} {% endblock %}
           </div>
 
